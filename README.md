@@ -3,53 +3,53 @@
 
 В тексте правил комиссий бывают такие проверки:
 
-  check {
-    includes_only(operating_carrier_iatas, 'AZ VE XM CT') and
-    ( includes(city_iatas.first, 'MOW LED SVX') or
-      (includes(city_iatas.first, 'IEV') and includes_only(city_iatas, 'IEV ROM MIL')) or
-      (includes(city_iatas.first, 'TBS') and includes_only(city_iatas, 'TBS ROM')) or
-      (includes(city_iatas.first, 'EVN') and includes_only(city_iatas, 'EVN ROM'))
-    )
-  }
+    check {
+      includes_only(operating_carrier_iatas, 'AZ VE XM CT') and
+      ( includes(city_iatas.first, 'MOW LED SVX') or
+        (includes(city_iatas.first, 'IEV') and includes_only(city_iatas, 'IEV ROM MIL')) or
+        (includes(city_iatas.first, 'TBS') and includes_only(city_iatas, 'TBS ROM')) or
+        (includes(city_iatas.first, 'EVN') and includes_only(city_iatas, 'EVN ROM'))
+      )
+    }
 
 Этот кусок кода на руби можно записать таким вот псевод-лиспом. Просто вернуть мне такую строку,
 я ее сам разберу. И, скорее всего, я в базе именно ее, а не ruby, буду хранить в базе.
 
-  (И
+    (И
 
-    (только
-      оперирующие-перевозчики
-      AZ VE XM CT)
+      (только
+        оперирующие-перевозчики
+        AZ VE XM CT)
 
-    (ИЛИ
+      (ИЛИ
 
-      (первый
-        города
-        MOW LED SVX)
-
-      (И
         (первый
           города
-          IEV)
-        (только
-          города
-          IEV ROM MIL))
+          MOW LED SVX)
 
-      (И
-        (первый
-          города
-          TBS)
-        (только
-          города
-          TBS ROM))
+        (И
+          (первый
+            города
+            IEV)
+          (только
+            города
+            IEV ROM MIL))
 
-      (И
-        (первый
-          города
-          EVN)
-        (только
-          города
-          EVN ROM))))
+        (И
+          (первый
+            города
+            TBS)
+          (только
+            города
+            TBS ROM))
+
+        (И
+          (первый
+            города
+            EVN)
+          (только
+            города
+            EVN ROM))))
 
 Операции
 --------
