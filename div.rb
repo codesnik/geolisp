@@ -27,7 +27,7 @@ template = Haml::Engine.new(<<END)
 %html
   %head
     %style
-      div {
+      .logic {
       padding: 5px;
       padding-left: 30px;
       margin: 5px;
@@ -44,19 +44,19 @@ template = Haml::Engine.new(<<END)
       cursor: move;
       }
   %body
-    %div
+    .logic
       %label AND
       %div
         %label only
         operating_carriers
         %input(type="text" value="AZ VE XM CT")
-      %div
+      .logic
         %label OR
         %div
           %label first
           cities
           %input(type="text" value="MOW LED SVX")
-        %div
+        .logic
           %label AND
           %div
             %label first
@@ -66,7 +66,7 @@ template = Haml::Engine.new(<<END)
             %label only
             cities
             %input(type="text" value="IEV ROM MIL")
-        %div
+        .logic
           %label AND
           %div
             %label first
