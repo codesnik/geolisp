@@ -2,24 +2,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def root
-    rule = [ :AND,
+    rule = [ 'AND',
 
-      [ :only, :operating_carriers, %[AZ VE XM CT]],
+      %W[ only operating_carriers AZ VE XM CT ],
 
-      [ :OR,
+      [ 'OR',
 
-        [ :first, :cities, %[MOW LED SVX]],
+        %W[ first cities MOW LED SVX ],
 
-        [ :AND,
-          [ :first, :cities, %[IEV]],
-          [ :only, :cities, %[IEV ROM MIL]]],
+        [ 'AND',
+          %W[ first cities IEV ],
+          %W[ only cities IEV ROM MIL ]],
 
-        [ :AND,
-          [ :first, :cities, %[TBS]],
-          [ :only, :cities, %[TBS ROM]]],
+        [ 'AND',
+          %W[ first cities TBS ],
+          %W[ only cities TBS ROM ]],
 
-        [ :AND,
-          [ :first, :cities, %[EVN]],
-          [ :only, :cities, %[EVN ROM]]]]]
+        [ 'AND',
+          %W[ first cities EVN ],
+          %W[ only cities EVN ROM ]]]]
   end
 end
