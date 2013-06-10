@@ -1,0 +1,5 @@
+.logic
+  %label= op
+  .drop-target
+    - inner_nodes.each do |node|
+      = render_node node

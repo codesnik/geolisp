@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def root
-    rule = [ 'AND',
+    @rule = [ 'AND',
 
       %W[ only operating_carriers AZ VE XM CT ],
 
