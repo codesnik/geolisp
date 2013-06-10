@@ -30,14 +30,18 @@ template = Haml::Engine.new(<<END)
       div {
       padding: 5px;
       padding-left: 30px;
-      border-style: solid;
-      border-color: lightblue;
-      border-width: 1px;
-      border-radius: 3px;
       margin: 5px;
+      border: solid 1px lightblue;
+      border-radius: 5px;
       }
       label {
       background: lightblue;
+      border: solid 1px blue;
+      border-radius: 5px;
+      margin: 5px;
+      margin-left: -25px;
+      padding: 2px;
+      cursor: move;
       }
   %body
     %div
