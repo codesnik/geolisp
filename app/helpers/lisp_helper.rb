@@ -1,7 +1,10 @@
-module ApplicationHelper
+module LispHelper
+  LOGIC_OPS = %W[AND OR NOT]
+  FUNCTION_OPS = %W[any only first last]
+
   def render_node node
     case node.first
-    when 'AND', 'OR', 'NOT'
+    when *LOGIC_OPS
       render_logic *node
     else
       render_function *node

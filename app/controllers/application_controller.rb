@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
           (AND
             (first cities EVN)
             (only cities EVN ROM))))
-    ]).parse
+    ]).parse.first
   end
 end
