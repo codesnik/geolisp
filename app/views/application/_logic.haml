@@ -1,5 +1,5 @@
 .logic
-  %label= select_tag( 'logic_op', options_for_select(LispHelper::LOGIC_OPS, op) )
+  = select_tag( 'logic_op', options_for_select(LispHelper::LOGIC_OPS, op) )
   .drop-target
     - inner_nodes.each do |node|
       = render_node node

@@ -1,4 +1,4 @@
 .function
-  %label= select_tag( 'function_op', options_for_select(LispHelper::FUNCTION_OPS, op) )
+  = select_tag( 'function_op', options_for_select(LispHelper::FUNCTION_OPS, op) )
   = op2
   %input(type="text" value=value)
