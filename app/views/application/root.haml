@@ -1,0 +1,47 @@
+.logic
+  %label AND
+  .drop-target
+    .function
+      %label operating_carriers
+      only
+      %input(type="text" value="AZ VE XM CT")
+    .logic
+      %label OR
+      .drop-target
+        .function
+          %label cities
+          first
+          %input(type="text" value="MOW LED SVX")
+        .logic
+          %label AND
+          .drop-target
+            .function
+              %label cities
+              first
+              %input(type="text" value="IEV")
+            .function
+              %label cities
+              only
+              %input(type="text" value="IEV ROM MIL")
+        .logic
+          %label AND
+          .drop-target
+            .function
+              %label cities
+              first
+              %input(type="text" value="TBS")
+            .function
+              %label cities
+              only
+              %input(type="text" value="TBS ROM")
+        .logic
+          %label AND
+          .drop-target
+            .function
+              %label cities
+              first
+              %input(type="text" value="EVN")
+            .function
+              %label cities
+              only
+              %input(type="text" value="EVN ROM")
