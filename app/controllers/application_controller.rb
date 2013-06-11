@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  require 'stupid_sexpr_parser'
+  require 'stupid_sexpr/parser'
   def root
-    @rule = StupidSexprParser.new(%[
+    @rule = StupidSexpr::Parser.new(%[
       (AND
         (only operating_carriers AZ VE XM CT)
         (OR
@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
           (AND
             (first cities EVN)
             (only cities EVN ROM))))
-    ]).parse.first
+    ]).parse
   end
 end
