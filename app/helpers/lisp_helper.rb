@@ -18,4 +18,12 @@ module LispHelper
   def render_function op, op2, *values
     render 'function', op: op, op2: op2, value: values.join(' ')
   end
+
+  def options_for_logic_select selected=nil
+    options_for_select LOGIC_OPS.map {|o| [t(o), o]}, selected
+  end
+
+  def options_for_function_select selected=nil
+    options_for_select FUNCTION_OPS.map {|o| [t(o), o]}, selected
+  end
 end
