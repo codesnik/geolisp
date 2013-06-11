@@ -1,0 +1,14 @@
+ru:
+  AND: И
+  OR: ИЛИ
+  NOT: НЕ
+
+  only: только
+  any: любой
+  first: первый
+  last: последний
+
+  cities: города
+  aeroports: аэропорты
+  operating_carriers: оперирующие перевозчики
+  marketing_carriers: маркетинговые перевозчики
