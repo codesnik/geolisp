@@ -14,12 +14,17 @@
 
 * { font-family: Helvetica, sans-serif }
 
+#rule-editor {
+  border: 1px solid black;
+  width: 700px
+}
+
 .logic, .function {
   padding: 5px;
   margin: 5px;
   border: solid 1px lightblue;
   border-radius: 5px;
-  cursor: move;
+  background: white;
 }
 
 .drop-target {
