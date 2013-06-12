@@ -23,7 +23,7 @@ module LispHelper
     options_for_select LOGIC_OPS.map {|o| [t(o), o]}, selected
   end
 
-  def options_for_function_select selected=nil
-    options_for_select FUNCTION_OPS.map {|o| [t(o), o]}, selected
+  def options_for_function_select scope, selected=nil
+    options_for_select FUNCTION_OPS.map {|o| [t(o, scope: scope), o]}, selected
   end
 end
