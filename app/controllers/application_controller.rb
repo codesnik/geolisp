@@ -18,5 +18,18 @@ class ApplicationController < ActionController::Base
             (first cities EVN)
             (only cities EVN ROM))))
     ]).parse
+    @library = StupidSexpr::Parser.new(%[
+       (AND
+         (OR)
+         (NOT)
+         (only operating_carriers)
+         (only marketing_carriers)
+         (only countries)
+         (only flight_numbers)
+         (only cities)
+         (only airports)
+       )
+    ]).parse
+    @trash = StupidSexpr::Parser.new(%[(AND)]).parse
   end
 end
