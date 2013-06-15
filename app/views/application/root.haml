@@ -1,11 +1,16 @@
 #rule-editor
   %h2 правило
-  = render_node @rule
+  %div
+    %button#serialize as text
+  .drop-target
+    = render_node @rule
 
 #trash
   %h2 корзина
-  = render_node @trash
+  .drop-target
+  -# = render_node @trash
 
 #library
   %h2 библиотека
-  = render_node @library
+  .drop-target
+    = render_node @library
