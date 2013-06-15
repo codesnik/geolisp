@@ -1,14 +1,12 @@
 #rule-editor
   %h2 правило
-  %div
-    %button#serialize as text
   .drop-target
     = render_node @rule
 
 #trash
   %h2 корзина
-  .drop-target
-  -# = render_node @trash
+
+#result
 
 #library
   %h2 библиотека
