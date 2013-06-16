@@ -37,10 +37,13 @@ h2 { text-align: center }
 }
 
 .drop-target {
-  margin-left: 20px;
   padding: 5px;
   border: dashed 2px transparent;
   border-radius: 5px;
+}
+
+.logic .drop-target {
+  margin-left: 20px;
 }
 
 .visible-target {

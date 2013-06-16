@@ -15,10 +15,20 @@ $ ->
     drop: (event, ui) ->
       $(ui.draggable).fadeOut -> @remove()
 
+  serializeNode = (node) ->
+    "(" + (
+      node.find(':selected').first().val() + ' ' +
+        if node.find(".drop-target").length
+          node.find(".drop-target").first().children().map (i, e) ->
+            serializeNode($(e))
+          .get().join(' ')
+        else
+          node.children(":hidden").val() + ' ' +
+          node.children(":text").val()
+      ) + ")"
+
   serializeResult = ->
-    funcs = $('#rule-editor').find(':selected, :text').map (i, e) ->
-      $(e).val()
-    .get().join ' '
+    serializeNode($('#rule-editor .drop-target').first())
 
   setInterval ->
     $("#result").text serializeResult()
