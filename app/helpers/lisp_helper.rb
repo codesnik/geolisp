@@ -11,6 +11,13 @@ module LispHelper
     end
   end
 
+  # TODO перенести .fn-list сюда?
+  def render_rules rules
+    rules.map do |rule|
+      render_node rule
+    end.join.html_safe
+  end
+
   def render_logic op, *inner_nodes
     render 'logic', op: op, inner_nodes: inner_nodes
   end

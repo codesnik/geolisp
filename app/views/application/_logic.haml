@@ -1,5 +1,5 @@
 .logic
   = select_tag( 'logic_op', options_for_logic_select(op) )
-  .drop-target
+  .fn-list
     - inner_nodes.each do |node|
       = render_node node

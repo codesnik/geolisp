@@ -5,8 +5,8 @@
 # * кансел
 # * библиотека должна клонировать вытаскиваемые элементы
 $ ->
-  $(".drop-target").sortable
-    connectWith: ".drop-target"
+  $(".fn-list").sortable
+    connectWith: ".fn-list"
     cursor: "move"
     revert: 200
 
@@ -18,8 +18,8 @@ $ ->
   serializeNode = (node) ->
     "(" + (
       node.find(':selected').first().val() + ' ' +
-        if node.find(".drop-target").length
-          node.find(".drop-target").first().children().map (i, e) ->
+        if node.find(".fn-list").length
+          node.find(".fn-list").first().children().map (i, e) ->
             serializeNode($(e))
           .get().join(' ')
         else
@@ -28,7 +28,7 @@ $ ->
       ) + ")"
 
   serializeResult = ->
-    serializeNode($('#rule-editor .drop-target').first())
+    serializeNode($('#rule-editor .fn-list').first())
 
   setInterval ->
     $("#result").text serializeResult()

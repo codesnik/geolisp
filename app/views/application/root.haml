@@ -1,7 +1,7 @@
 #rule-editor
   %h2 правило
-  .drop-target
-    = render_node @rule
+  .fn-list
+    = render_rules @rule
 
 #trash
   %h2 корзина
@@ -10,5 +10,5 @@
 
 #library
   %h2 библиотека
-  .drop-target
-    = render_node @library
+  .fn-list
+    = render_rules @library

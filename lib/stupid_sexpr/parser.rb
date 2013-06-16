@@ -14,10 +14,9 @@ module StupidSexpr
     end
 
     def parse
-      parse_one[0]
+      parse_one
     end
 
-    # скобки генерят одно лишнее вложение
     def parse_one
       exp = []
       while token = fetch_token
